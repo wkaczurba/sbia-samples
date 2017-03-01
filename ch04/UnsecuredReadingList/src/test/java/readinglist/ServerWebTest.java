@@ -3,16 +3,19 @@ package readinglist;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
+//import org.springframework.boot.test.SpringApplicationConfiguration;
+//import org.springframework.boot.test.WebIntegrationTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.client.RestTemplate;
 
 import readinglist.ReadingListApplication;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes=ReadingListApplication.class)
-@WebIntegrationTest(randomPort=true)
+//@SpringApplicationConfiguration(classes=ReadingListApplication.class)
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT, classes=ReadingListApplication.class)
+//@WebIntegrationTest(randomPort=true)
 public class ServerWebTest {
   
   @Value("${local.server.port}")

@@ -11,13 +11,18 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+//import org.springframework.boot.test.SpringApplicationConfiguration;
+//import org.springframework.boot.test.WebIntegrationTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+//import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes=ReadingListApplication.class)
-@WebIntegrationTest(randomPort=true)
+@RunWith(SpringRunner.class)
+//@SpringApplicationConfiguration(classes=ReadingListApplication.class)
+//@WebIntegrationTest(randomPort=true)
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT, classes=ReadingListApplication.class)
+
 public class ServerWebTests {
   
   private static FirefoxDriver browser;
